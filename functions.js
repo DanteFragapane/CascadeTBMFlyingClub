@@ -10,4 +10,7 @@ const findAirframe = (connection, nickname, cb) => {
   connection.query("SELECT id FROM airframes WHERE name = ?", nickname, cb)
 }
 
+const getAirframes = (connection, name, cb) => {
+  connection.query("SELECT * FROM  ")
+}
 module.exports = { findPilotID, findAirframe }

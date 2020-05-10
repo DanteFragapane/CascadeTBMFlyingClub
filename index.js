@@ -38,7 +38,7 @@ fs.createReadStream('./airport-codes.csv').pipe(csv()).on('data', (data) => {
 bot.on('ready', () => {
 	console.log('Ready to fly!');
 });
-
+T
 fs.readdir("./events/", (err, files) => {
   if (err) return console.error(err);
   files.forEach(file => {
