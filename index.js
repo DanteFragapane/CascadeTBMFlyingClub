@@ -7,7 +7,6 @@ const discord = require('discord.js');
 const csv = require('csv-parser')
 const fs = require('fs');
 const Enmap = require('enmap')
-const functions = require('./functions');
 
 // Load the dotenv variables
 dotenv.config();
@@ -38,7 +37,7 @@ fs.createReadStream('./airport-codes.csv').pipe(csv()).on('data', (data) => {
 bot.on('ready', () => {
 	console.log('Ready to fly!');
 });
-T
+
 fs.readdir("./events/", (err, files) => {
   if (err) return console.error(err);
   files.forEach(file => {
@@ -61,6 +60,7 @@ fs.readdir("./commands/", (err, files) => {
   });
 });
 
-
 // Login
-bot.login(env.botId);
+bot.login(env.botId).catch((reason) => {
+  console.error(reason)
+})
