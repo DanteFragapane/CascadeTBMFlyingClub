@@ -8,7 +8,7 @@ module.exports = {
         const command = bot.commands.get(args[0])
         if(!command) {
             message.reply("Please give a valid command.") 
-            return  false
+            return
         }
         message.reply(command.help.description)
     }
